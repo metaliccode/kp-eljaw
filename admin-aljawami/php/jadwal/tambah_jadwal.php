@@ -61,8 +61,8 @@ if ($kd_matkul) {
 				echo "<script>alert('Matakuliah sudah diambil oleh kelas ini ($kelas) !');window.history.back()</script>";
    			}else{
 
-   				$sqldos = "SELECT * FROM tb_jadwal,tb_dosen WHERE tb_dosen.id_dosen=tb_jadwal.kd_dosen='$kd_dosen' 
-	   				AND hari='$hari'
+   				$sqldos = "SELECT * FROM tb_jadwal,tb_dosen WHERE tb_dosen.id_dosen=tb_jadwal.kd_dosen 
+	   				AND hari='$hari' AND kd_dosen='$kd_dosen'
 					AND (  (waktu1<'$waktu1' AND waktu2>'$waktu1' AND waktu1<'$waktu2' AND waktu2>='$waktu2') 
 					OR (waktu1<'$waktu1' AND waktu2>'$waktu1' AND waktu1<'$waktu2' AND waktu2<='$waktu2') 
 					OR (waktu1>'$waktu1' AND waktu2>'$waktu1' AND waktu1<'$waktu2' AND waktu2>='$waktu2')
